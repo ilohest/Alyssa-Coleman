@@ -1,0 +1,198 @@
+/* cible les items du menu dans ton #navigation (a ET div) */
+#navigation a,
+#navigation .se {
+  text-decoration: none !important;
+}
+
+.text-transform p {
+  text-transform: none !important;
+}
+
+.se-button span {
+  white-space: normal !important;
+}
+
+.sie-rhythm-shift-desktop_1-text b {
+  color: #59463a !important;
+}
+
+.sie-section-generosity_3-text i,
+.sie-section-transition-to-the-solution_0 i {
+  color: #93b9d3 !important;
+}
+
+/* le texte */
+#navigation a h3,
+#navigation .se h3 {
+  display: inline-block;
+  position: relative;
+  padding-bottom: 3px;
+  transition: color 0.2s ease;
+}
+
+/* underline animé */
+#navigation a h3::after,
+#navigation .se h3::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.25s ease;
+}
+
+/* hover: couleur + underline */
+#navigation a:hover h3,
+#navigation .se:hover h3 {
+  color: rgba(56, 13, 15, 1);
+}
+
+#navigation a:hover h3::after,
+#navigation .se:hover h3::after {
+  transform: scaleX(1);
+}
+
+/* ACTIVE state (Showit: .is-active) */
+#navigation a.is-active h3 {
+  color: rgba(56, 13, 15, 1);
+}
+
+#navigation a.is-active h3::after {
+  transform: scaleX(1);
+}
+
+/* B&N hover*/
+.img-bw-hover {
+  filter: grayscale(0);
+  transition: filter 0.45s ease;
+}
+
+.img-bw-hover:hover {
+  filter: grayscale(100%);
+}
+
+#pin-section {
+  position: relative;
+}
+
+#pin-text {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.pin-spacer {
+  background-color: rgba(252, 250, 245, 1);
+}
+
+.sie-lets-cook_0-text {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.sie-lets-cook_0-text::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -0.15em;
+  height: 2px;
+  /* épaisseur */
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+}
+
+.sie-lets-cook_0-text:hover::after {
+  transform: scaleX(1);
+}
+
+.sie-lets-cook_0-text:hover {
+  color: rgba(56, 13, 15, 1);
+}
+
+.m .st-m-subheading {
+  text-transform: none !important;
+}
+
+/* BUBBLES */
+/* Layer */
+.bubbles-layer,
+.bubbles-embed {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/* Wrapper qui MONTE uniquement */
+.bubble-wrap {
+  position: absolute;
+  bottom: -40px;
+  will-change: transform, opacity;
+  animation-name: rise;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+/* La “patate” (forme) */
+.bubble {
+  width: 100%;
+  height: 100%;
+  background: #000;
+  border-radius: 60% 40% 55% 45% / 55% 60% 40% 45%;
+  will-change: border-radius;
+  animation: morph ease-in-out infinite;
+}
+
+/* Montée: QUE monter */
+@keyframes rise {
+  0% {
+    transform: translateY(0) scale(0.6);
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-90vh) scale(1.15);
+    opacity: 0;
+  }
+}
+
+/* Morphing: change la forme sans déplacer */
+@keyframes morph {
+  0%,
+  100% {
+    border-radius: 60% 40% 55% 45% / 55% 60% 40% 45%;
+  }
+
+  50% {
+    border-radius: 45% 55% 40% 60% / 60% 40% 65% 35%;
+  }
+}
+
+/* REVEAL EFFECT */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
+  will-change: opacity, transform;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
