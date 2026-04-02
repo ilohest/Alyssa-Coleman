@@ -17,8 +17,21 @@
 }
 
 .sie-section-generosity_3-text i,
-.sie-section-transition-to-the-solution_0 i {
+.sie-section-transition-to-the-solution_0 i,
+.sie-secret-recipe_1-text i {
   color: #93b9d3 !important;
+}
+
+.want-too {
+  height: fit-content !important;
+}
+.want-too > span > .st-d-primary {
+  margin-top: 16px;
+  line-height: 1 !important;
+}
+
+.white-text i {
+  color: #fff !important;
 }
 
 /* le texte */
@@ -90,13 +103,20 @@
   background-color: rgba(252, 250, 245, 1);
 }
 
-.sie-lets-cook_0-text {
+b,
+strong {
+  font-weight: 400 !important;
+}
+
+.sie-lets-cook_0-text,
+.sie-client-love_2-text {
   position: relative;
   display: inline-block;
   text-decoration: none;
 }
 
-.sie-lets-cook_0-text::after {
+.sie-lets-cook_0-text::after,
+.sie-client-love_2-text::after {
   content: "";
   position: absolute;
   left: 0;
@@ -110,16 +130,26 @@
   transition: transform 0.25s ease;
 }
 
-.sie-lets-cook_0-text:hover::after {
+.sie-lets-cook_0-text:hover::after,
+.sie-client-love_2-text:hover::after {
   transform: scaleX(1);
 }
 
-.sie-lets-cook_0-text:hover {
+.sie-lets-cook_0-text:hover,
+.sie-client-love_2-text:hover {
   color: rgba(56, 13, 15, 1);
 }
 
 .m .st-m-subheading {
   text-transform: none !important;
+}
+
+.has-border {
+  border: 1px solid #000;
+}
+
+.w-has-border {
+  border: 1px solid #ffffff;
 }
 
 /* BUBBLES */
@@ -195,4 +225,78 @@
 .reveal.is-visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* MENU*/
+/* État initial (top) : pas de fond, texte blanc */
+#navigation {
+  background: transparent !important;
+  transition: background-color 0.25s ease;
+}
+
+#navigation .se-t,
+#navigation a {
+  color: #fff !important;
+  transition: color 0.25s ease;
+}
+
+/* État scrollé : fond blanc, texte noir */
+#navigation.is-scrolled {
+  background: #fcfaf5 !important;
+  border-bottom: 1px solid #000;
+}
+
+#navigation.is-scrolled .se-t,
+#navigation.is-scrolled a {
+  color: #000 !important;
+}
+
+/* =========================
+   MOBILE FIX
+   ========================= */
+
+/* Force le menu en fixed aussi en mobile */
+#navigation {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
+
+/* Showit met le fond ici en mobile */
+#navigation .ss-bg {
+  background: transparent !important;
+  transition: background-color 0.25s ease;
+}
+
+/* État scroll mobile */
+#navigation.is-scrolled,
+#navigation.is-scrolled .ss-bg {
+  background: #fcfaf5 !important;
+}
+
+/* Burger blanc au départ */
+#navigation .se-img {
+  filter: brightness(0) invert(1);
+  transition: filter 0.25s ease;
+}
+
+/* Burger noir au scroll */
+#navigation.is-scrolled .se-img {
+  filter: none;
+}
+
+/* scroll vs hidden menu */
+#navigation {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  transition: transform 0.3s ease;
+  z-index: 999;
+}
+
+@font-face {
+  font-family: "AC Fifindrel";
+  src: url(https://static.showit.co/file/P5HHzsIeKLIDTMAsaxJ8Rw/167310/ac-fifindrel_unicode.woff);
 }
