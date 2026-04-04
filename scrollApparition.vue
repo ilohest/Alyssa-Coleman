@@ -1,3 +1,4 @@
+<script>
 (function () {
   function initReveal() {
     const selector = "section, h1, h2, h3, h4, p, img, .btn, .sb-ps, .sc";
@@ -29,7 +30,6 @@
 
     revealEls.forEach((el) => observer.observe(el));
 
-    // sanity check CSS: est-ce que l'opacité change ?
     setTimeout(() => {
       const sample = revealEls[0];
       if (!sample) return;
@@ -43,3 +43,4 @@
     initReveal();
   }
 })();
+</script>
